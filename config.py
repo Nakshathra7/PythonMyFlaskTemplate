@@ -1,0 +1,1 @@
+DB = {'host':'mysql.clarksonmsda.org','port':3306,'user':'manoha','password':'is437clarkson','db':'manoha_is437'}
