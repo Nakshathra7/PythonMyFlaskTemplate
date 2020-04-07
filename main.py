@@ -148,8 +148,8 @@ def editCustomer():
     #return ''
     return render_template('savedCustomer.html', title='Customer Saved', customer=c.data[0])
 
-@app.route('/customerList')
-def customerList():
+@app.route('/allCustomers')
+def allCustomers():
     if checkSession() == False: #check to make sure the user is logged in
         return redirect('login')
     c = customerList()
@@ -179,6 +179,7 @@ def logout():
     del session['active']
     return render_template('login.html', title='Login',msg='You have Logged Out...!!!')
     
+
 @app.route('/static/<path:path>')
 def send_static(path):
     return send_from_directory('static', path)
@@ -186,7 +187,4 @@ def send_static(path):
 if __name__ == '__main__':
    app.secret_key = '1234'
    app.run(host='127.0.0.1',debug=True)
-
-
-
 
